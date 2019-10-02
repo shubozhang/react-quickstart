@@ -1,5 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was bootstrapped with [Create React App01](https://github.com/facebook/create-react-app).
 
+```
+myfirstreactapp
+├── package-lock.json // 锁定安装时的包的版本号，并且需要上传到git，以保证其他人在npm install时大家的依赖能保证一致,对整个文件的描述,为的是让开发者知道只要你保存了源文件，到一个新的机器上、或者新的下载源，只要按照这个package-lock.json所标示的具体版本下载依赖库包，就能确保所有库包与你上次安装的完全一样，它是npm install自动生成的一文件
+├── package.json // 对整个应用程序的描述,应用名称,版本号,一些依赖包,以及项目的启动,打包，测试配置，锁定大版本
+├── public
+│ ├── favicon.ico // icon图标
+│ ├── index.html // 主页面,首页模板
+│ └── manifest.json // 定义成app应用的方式来使用,快捷方式的图标,可以配置icons，定义快捷方式的图标,定义快捷方式跳转的网址到哪里,主题颜色,用于指定应用的显示名称、图标、应用入口文件地址及需要使用的设备权限等信息，类似于android里面的manifest.xlm配置文件
+├── README.md // 说明文档
+└── src // 源码目录
+├── App01.css // App应用组件的样式
+├── App0101.js // App应用组件的逻辑代码,构成一个react组件的基本组成部分
+├── App01.test.js // App自动化测试文件
+├── index.css // 首页入口index的样式
+├── index.js // 整个程序运行的入口文件,这个应用所做的事情是,只是渲染一个名叫App的组件，App组件在同目录下的App.js文件中定义
+├── logo.svg // 图标,资源
+└── serviceWorker.js // 引入这个是为了帮助我们借助网页去写手机app应用这样的一个功能
+```
 
 ## CH01 Introduction
 npx create-react-app my-app
@@ -50,7 +68,7 @@ npm start
 
 
 * Component: three properties
-    * state
+    * state (maintain internal state)
         * constructor / read state / update state
         * bind this to new function
         ```javascript
@@ -69,13 +87,24 @@ npm start
                  stateProp2: value2
              })
         ```
-    * props
+    * props (passed from outside)
         * defaultProps
         * propTypes
         * ``...`` is used to zip and unzip
             * zip: function fn(...f) == function fn(1, 2, 3)
             * unzip: const arr1 = [1, 2, 3], const arr2 = [4,...arr1, 5]
     * refs
+        * There are a few good use cases for refs:
+            * Managing focus, text selection, or media playback.
+            * Triggering imperative animations.
+            * Integrating with third-party DOM libraries.
+            * Avoid using refs for anything that can be done declaratively.
+            * For example, instead of exposing open() and close() methods on a Dialog component, pass an isOpen prop to it.
+        * Don’t Overuse Refs: Your first inclination may be to use refs to “make things happen” in your app. If this is the case, 
+        take a moment and think more critically about where state should be owned in the component hierarchy. 
+        Often, it becomes clear that the proper place to “own” that state is at a higher level in the hierarchy. S
+        ee the Lifting State Up guide for examples of this.
+
 * state vs props
 
 | state | props|
@@ -97,7 +126,52 @@ and is executed after its parent function has completed.
 * implementation in static web page
 * dynamic page
     * dynamic data
-    * 
+    * interaction
+
+
+## Ch04 Form
+* Example username input is uncontrolled-component that you have to use this.nameInput.value to read the value.
+* Example password input is controlled-component that the value will be automatically saved to state. React prefers this way that operates on
+states not dom
+
+
+
+## Ch05 Liftcycle
+* mount
+* update
+* unmount
+
+* First time render
+    * constructor
+    * componentWillMount()
+    * render()
+    * componentDidMount(): start listen and send AJAX request. (asyn constructor)
+* update state: this.setState()
+    * componentWillUpdate()
+    * render()
+    * componentDidUpdate()
+* remove component: ReactDOM.unmountComponentAtNode(containerDom)
+    * componentWillUnmount(): do some clean up work, like removing timer
+
+
+* Others
+    * componentWillReceiveProps()
+
+## Ch06 Dom Diff
+* Initialization
+    * create virtual DOM
+    * create concrete DOM
+    * render 
+* Update
+    * setState()
+    * recreate virtual DOM
+    * diff two virtual DOMS
+    * update the differences on concrete DOM
+    * partial update render
+
+
+
+
 
 ## Available Scripts
 
@@ -138,7 +212,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+You can learn more in the [Create React App01 documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
@@ -150,7 +224,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/co
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
 
-### Making a Progressive Web App
+### Making a Progressive Web App01
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
 

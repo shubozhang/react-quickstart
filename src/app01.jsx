@@ -1,15 +1,18 @@
 import React from 'react';
 import './css/App.css';
-import MyComponent from './Ch02Component/MyComponent'
-import MyComponent2 from './Ch02Component/MyComponent2'
-import MyState from './Ch02Component/MyState'
-import MyProps, {PersonExample} from './Ch02Component/MyProps'
-import MyPropsClass from './Ch02Component/MyPropsClass'
-import {MyRefEvent1, MyRefEvent2} from "./Ch02Component/MyRefEvent";
-import {CApp} from "./Ch03ComponentApp/CApp"
+import MyComponent from './components01/Ch02Component/MyComponent'
+import MyComponent2 from './components01/Ch02Component/MyComponent2'
+import MyState from './components01/Ch02Component/MyState'
+import MyProps, {PersonExample} from './components01/Ch02Component/MyProps'
+import MyPropsClass from './components01/Ch02Component/MyPropsClass'
+import {MyRefEvent1, MyRefEvent2} from "./components01/Ch02Component/MyRefEvent";
+import {CApp} from "./components01/Ch03ComponentApp/CApp"
+import {LoginForm} from "./components01/Ch04form/LoginForm";
+import {Life} from "./components01/ch05lifecycle/Life";
+import {HelloWorld} from "./components01/ch06DomDiff/HelloWorld";
 
 
-function App() {
+export default function App01() {
     const frontNames = ['jQuery', 'zepto', 'angular', 'vue', 'react']
     const ul = (
         <ul>
@@ -21,7 +24,7 @@ function App() {
     const p1 = {name: "Zoe", gender: "female", age: 25}
     const p2 = {name: "My props class", gender: "female", age: 25}
     return (
-        <div className="App">
+        <div className="App" id={"example"}>
             <h1> hi, this is Brylee </h1>
             <p>this is a paragraph</p>
             <PersonExample name="Arron" age="20"/>
@@ -41,6 +44,12 @@ function App() {
 
             <CApp/>
 
+            <LoginForm/>
+
+            <Life msg={"React is too difficult"}/>
+
+            <HelloWorld></HelloWorld>
+
         </div>
     );
     // same as
@@ -48,4 +57,4 @@ function App() {
 }
 
 
-export default App;
+

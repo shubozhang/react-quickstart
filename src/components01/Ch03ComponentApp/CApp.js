@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 // 1) Defined shared data in father
 // 2) Defined non-shared data in itself
 
-// 2. child component needs to update state in father compnent
+// 2. child component needs to update state in father component
 // 1) state should be defined within the component that will be updated
 // 2) define update func in father, and then pass it to child to invoke
 

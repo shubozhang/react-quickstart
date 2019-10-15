@@ -11,7 +11,7 @@ export default class App02 extends Component {
             <div>
                 <header className={"site-header jumbotron"}>
                     <div className={"container"}>
-                        <h1>Comments on React</h1>
+                        <h1>Comments on ReactJS</h1>
                     </div>
                 </header>
                 <div className={"container"}>

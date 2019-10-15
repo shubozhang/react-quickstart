@@ -171,6 +171,57 @@ states not dom
 
 
 
+## Ch07 Redux
+Redux workflow
+
+Action creator(dispatch action) -> Store(send preState, action) <=> Reducers (return newState)
+
+React Components (Store update newState to react component)
+
+
+Redux API
+* createStore()
+
+
+* Redux Store Object:
+    * Redux core management object
+    * maintain: state and reducer
+    * main api: 
+        * getState() 
+        * dispatch(action) 
+        * subscribe(listener) 
+        * store.getState() 
+        * store.dispatch()
+    
+* Action
+    * Two attributes:
+        * type
+        * data
+    * Action Creator
+    ```javascript
+    const increment = (number) => ({type:'INCREMENT', data: number})
+    ```
+
+* Reducer
+    * preState + Action => new state function
+    * example
+    ```javascript
+    export default function counter(state = 0, action) {
+      switch (action.type) {
+        case "INCREMENT":
+          return state + action.data
+        case "DECREMENT":
+          return state - action.data 
+        default:
+          return state 
+      }
+    }
+    ```
+    * Return a new state, not update preState
+
+
+
+
 
 
 ## Available Scripts

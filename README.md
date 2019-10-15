@@ -192,7 +192,8 @@ Redux API
         * subscribe(listener) 
         * store.getState() 
         * store.dispatch()
-    
+        
+#### Three core parts of Redux    
 * Action
     * Two attributes:
         * type
@@ -219,7 +220,20 @@ Redux API
     ```
     * Return a new state, not update preState
 
-
+* store
+    * connect state, action, and reducer
+    * example
+    ```javascript
+    import {createStore} from 'redux'
+    import reducer from './reducers'
+    const store = createStore(reducer)
+    ```
+    * APIs
+    ```javascript
+    getState() // get state
+    dispatch(action) // dispatch action, trigger reducer, and generate new state
+    subscribe(listener) // register new listener, it will be triggered when new state occurs
+    ```
 
 
 

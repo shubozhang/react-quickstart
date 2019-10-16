@@ -1,21 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
+import App02 from './components02/app/app02.jsx';
 import * as serviceWorker from './serviceWorker';
-import App03 from './redux/app';
-import store from "./redux/store";
 
 
-function render() {
-    ReactDOM.render(<App03  store={store}/>, document.getElementById('root'));
 
-}
-
-// init render
-render()
-
-// subscribe listener to update render
-store.subscribe(render)
+// Examples from components02
+ReactDOM.render(<App02 />, document.getElementById('root'));
 
 
 

@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {INCREMENT, DECREMENT} from '../redux/action-types'
+import * as actions from './actions'
+
+
 
 export default class App03 extends Component {
     state = {
@@ -13,7 +15,7 @@ export default class App03 extends Component {
         //debugger
 
         // 2. use store to update state
-        this.props.store.dispatch({type: INCREMENT, data: number})
+        this.props.store.dispatch(actions.increment(number))
     }
 
     decrement = () => {
@@ -21,7 +23,7 @@ export default class App03 extends Component {
         const number = this.select.value * 1
 
          // 2. use store to update state
-        this.props.store.dispatch({type: DECREMENT, data: number})
+        this.props.store.dispatch(actions.decrement(number))
     }
 
     incrementIfOdd = () => {
@@ -32,7 +34,7 @@ export default class App03 extends Component {
         const count = this.props.store.getState()
 
         if (count % 2 == 1) {
-            this.props.store.dispatch({type:INCREMENT, data: number})
+            this.props.store.dispatch(actions.increment(number))
         }
     }
 
@@ -40,7 +42,7 @@ export default class App03 extends Component {
         const  number = this.select.value * 1
 
         setTimeout(() => {
-            this.props.store.dispatch({type: INCREMENT, data: number})
+            this.props.store.dispatch(actions.increment(number))
         }, 1000)
     }
 

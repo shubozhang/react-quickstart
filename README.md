@@ -236,6 +236,26 @@ Redux API
     ```
 
 
+## React-Redux
+To decouple react and redux
+
+* UI components
+    * Do not use any redux api
+    * Do not have business logic
+    * Under components path
+
+
+* Container components
+    * Use redux api
+    * Have business logic
+    * Under container folder
+    
+    
+    
+## Redux-Async
+
+
+
 
 
 ## Available Scripts

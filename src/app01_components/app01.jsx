@@ -1,5 +1,5 @@
 import React from 'react';
-import './css/App.css';
+import '../css/App.css';
 import MyComponent from './components01/Ch02Component/MyComponent'
 import MyComponent2 from './components01/Ch02Component/MyComponent2'
 import MyState from './components01/Ch02Component/MyState'

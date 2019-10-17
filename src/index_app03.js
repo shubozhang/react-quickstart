@@ -1,19 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './css/index.css';
-import App01 from './app01_components/app01.jsx';
 import * as serviceWorker from './serviceWorker';
+import App03 from './app03_redux/app';
+import store from "./app03_redux/store";
 
 
-// Examples from components01
-ReactDOM.render(
-    (
-        <div>
-            <p>App01 Example</p>
-            <App01/>
-        </div>
-    )
-    , document.getElementById('root'));
+function render() {
+    ReactDOM.render(<App03  store={store}/>, document.getElementById('root'));
+
+}
+
+// init render
+render()
+
+// subscribe listener to update render
+store.subscribe(render)
+
+
+
+
 
 
 // If you want your app to work offline and load faster, you can change

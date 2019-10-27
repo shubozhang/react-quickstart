@@ -1,0 +1,1 @@
+// redux managed store object

@@ -1,17 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Provider} from 'react-redux'
-import App from "./app05_redux-thunk/containers/app";
-import store from "./app05_redux-thunk/store";
+import App from "./app07_contact/app07";
 import * as serviceWorker from "./serviceWorker";
 
 
 ReactDOM.render(
     (<div>
-            <p>Redux-thunk example</p>
-            <Provider store={store}>
-                <App/>
-            </Provider>
+            <App/>
         </div>
 
     ),

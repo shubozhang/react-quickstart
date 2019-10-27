@@ -1,5 +1,7 @@
-This project was bootstrapped with [Create React App01](https://github.com/facebook/create-react-app).
+# React Quickstart
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Project Structure:
 ```
 myfirstreactapp
 ├── package-lock.json // 锁定安装时的包的版本号，并且需要上传到git，以保证其他人在npm install时大家的依赖能保证一致,对整个文件的描述,为的是让开发者知道只要你保存了源文件，到一个新的机器上、或者新的下载源，只要按照这个package-lock.json所标示的具体版本下载依赖库包，就能确保所有库包与你上次安装的完全一样，它是npm install自动生成的一文件
@@ -19,10 +21,36 @@ myfirstreactapp
 └── serviceWorker.js // 引入这个是为了帮助我们借助网页去写手机app应用这样的一个功能
 ```
 
+* webpack is used as module bundler
+* babel is a javascript complier
+
+## Folders
+* ./es6_refresh    //recaps syntax
+
+
+
 ## CH01 Introduction
 npx create-react-app my-app
 cd my-app
 npm start
+
+What Is React?
+* Client side JavaScript library
+* Used to build dynamic user interfaces
+* Renders everything as a "component"
+* Often referred to as the "V" in MVC
+* Make javascript easier
+* Organizes your UI
+* Reusability
+* Scalability and efficiency
+* Lighter than most other frameworksƒ
+
+
+React is not a framework
+* No router
+* No http client
+* All these features are provided by extra tools
+
 
 
 * JSX (Javascript XML)
@@ -71,6 +99,11 @@ npm start
     * state (maintain internal state)
         * constructor / read state / update state
         * bind this to new function
+        * Arrow function (anonymous function) does not need to bind ``this``. 
+        Simply because arrow function does not have the following in its context: this /arguments / super /new.target. 
+        So when you reference this inside an arrow function it treat this as any other variable and look for its declaration 
+        in its scope first and it can not find it so it search the upper scope which is the this referring to the react component class 
+        which what is required so we do not need to bind the this to the class.
         ```javascript
          1. construct state
              constructor(props){
@@ -256,6 +289,8 @@ To decouple react and redux
 
 
 
+
+React.Fragment
 
 
 ## Available Scripts
